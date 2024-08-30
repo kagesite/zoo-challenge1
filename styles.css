@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "comic neue", sans-serif;
+}
+
+body {
+  background-image: url(./jungle.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+i {
+  font-size: 64px;
+  color: white;
+  cursor: pointer;
+}
+
+.fa-dove:hover {
+  color: #5c5cd4;
+}
+
+.fa-frog:hover {
+  color: #068626;
+}
+
+.fa-fish:hover {
+  color: #d30cda;
+}
+
+.top, .bottom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 10vh;
+  widtH: 100%;
+  position: relative;
+  padding: 2%;
+  overflow: hidden;
+  animation: backOpacity 15s ease-in-out infinite;
+}
+
+@keyframes backOpacity {
+  0%, 100% {
+    background-color: rgba(255, 255, 255, 0.2);
+  } 
+  50% {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.top i, .bottom i {
+  animation: moveAcross 20s ease-in-out infinite;
+}
+
+@keyframes moveAcross {
+  0% {
+    transform: translateX(-100vw);
+  }
+  50% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #088547; */
+  width: 100vw;
+  height: 100%;
+  padding: 0px 5%;
+}
+
+.bounce {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: lightblue; */
+  height: 80%;
+  width: 60%;
+}
+
+.fa-frog {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  
+}
+
+.fa-frog:nth-child(1) {
+  left: 0%;
+}
+.fa-frog:nth-child(2) {
+  left: 13%;
+}
+.fa-frog:nth-child(3) {
+  left: 26%;
+}
+.fa-frog:nth-child(4) {
+  left: 39%;
+}
+.fa-frog:nth-child(5) {
+  left: 52%;
+}
+.fa-frog:nth-child(6) {
+  left: 65%;
+}
+.fa-frog:nth-child(7) {
+  left: 78%;
+}
+.fa-frog:nth-child(8) {
+  left: 91%;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #dadfea;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 50px;
+  width: 40%;
+  max-width: 400px;
+  transition: 0.2s all;
+  cursor: pointer;
+  animation: dadfeaToBlack 15s infinite;
+}
+
+form:hover {
+  transform: translateX(-10%);
+}
+
+form h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  animation: rainbow 7s infinite
+}
+
+label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  animation: blackToDadfea 15s infinite;
+}
+
+input {
+  width: 80%;
+  padding: 4px 8px;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+input[type="submit"] {
+  margin-bottom: 0;
+  margin-top: 8px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  width: 30%;
+  padding: 16px 0px;
+  cursor: pointer;
+  animation: blackGreen 3s ease-in-out infinite;
+}
+
+input:active {
+  background-color: #088547;
+  color: white;
+}
+
+input:active::placeholder {
+  color: white;
+}
+
+@keyframes blackGreen {
+  0% {
+    background-color: black;
+  }
+  50% {
+    background-color: #088547;
+  }
+  100% {
+    background-color: black;
+  }
+}
+
+
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  15% {
+    color: orange;
+  }
+  30% {
+    color: yellow;
+  }
+  45% {
+    color: green;
+  }
+  60% {
+    color: blue;
+  }
+  75% {
+    color: indigo;
+  }
+  90% {
+    color: violet;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@keyframes dadfeaToBlack {
+  0% {
+    background-color: #dadfea;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    background-color: #dadfea;
+  }
+}
+
+@keyframes blackToDadfea {
+  0% {
+    color: black;
+  }
+  50% {
+    color: #dadfea;
+  }
+  100% {
+    color: black;
+  }
+}
